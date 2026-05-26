@@ -19,10 +19,12 @@ import cl.esperanza.incidencia.model.Incidencia;
 public class IncidenciaController {
     private final IncidenciaService incidenciaService;
 
+    // Constructor de Inyeccion 
     public IncidenciaController(IncidenciaService incidenciaService){
         this.incidenciaSevice = incidenciaService;
     }
 
+    // EndPoint 1 findByPrioridad
     @GetMapping("/prioridad/{prioridad}")
     public ResponseEntity<Incidencia> getIncidenciaPorPrioridad(@PathVariable int prioridad) {
         Incidencia incidencia = incidenciaService.obtenerPorPrioridad(prioridad);
@@ -31,5 +33,7 @@ public class IncidenciaController {
         }
         return ResponseEntity.ok(incidencia);
     }
+
+    
     
 }
