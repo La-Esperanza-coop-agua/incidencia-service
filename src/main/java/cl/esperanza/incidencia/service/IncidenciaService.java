@@ -20,4 +20,9 @@ public class IncidenciaService {
     public Incidencia guardarIncidencia(Incidencia inci){
         return inciRepo.save(inci);
     }
+
+    public Incidencia actualizarIncidencia(Integer id, Incidencia inciActualizada){
+        inciActualizada.setIdIncidencia(id);
+        return inciRepo.save(inciActualizada);
+    }
 }
