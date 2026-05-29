@@ -3,6 +3,7 @@ package cl.esperanza.incidencia.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cl.esperanza.incidencia.exception.ResourceNotFoundException;
 import cl.esperanza.incidencia.model.Incidencia;
 import cl.esperanza.incidencia.repository.IncidenciaRepository;
 import jakarta.transaction.Transactional;
@@ -21,8 +22,11 @@ public class IncidenciaService {
         return inciRepo.save(inci);
     }
 
-    public Incidencia actualizarIncidencia(Integer id, Incidencia inciActualizada){
-        inciActualizada.setIdIncidencia(id);
-        return inciRepo.save(inciActualizada);
+    public Incidencia actualizarEstado(Integer id, boolean nuevoEstado){
+        Incidencia incidencia = inciRepo.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("No se encontró la incidencia con ID: "+ id));
+
+        incidencia.setEstadoReparacion(nuevoEstado);
+        return inciRepo.save(incidencia);
     }
 }
