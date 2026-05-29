@@ -1,5 +1,15 @@
 package cl.esperanza.incidencia.config;
 
-public class WebClientConfig {
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
+public class WebClientConfig {
+    /*
+    @Bean
+    public WebClient reparacionesWebClient(WebClient.Builder builder) {
+        return builder.baseUrl("http://localhost:8081/api/v1/reparaciones"); 
+    }
+    
+    */
+    
 }
