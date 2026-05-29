@@ -26,7 +26,7 @@ public class Incidencia {
     @Column(nullable = false)
     private double coordenadas;
 
-    @Column(nullable = false)
+    @Column(name = "estado_reparacion",nullable = false)
     private boolean estadoReparacion;
 
     @Column(nullable = true, length = 150)
