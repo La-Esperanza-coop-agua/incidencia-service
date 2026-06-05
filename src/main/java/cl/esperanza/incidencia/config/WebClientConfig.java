@@ -10,4 +10,9 @@ public class WebClientConfig {
     public WebClient reparacionesWebClient() {
         return WebClient.builder().baseUrl("http://localhost:8088/api/v1/reparaciones").build();
     }
+
+    @Bean
+    public WebClient sociosWebClient() {
+        return WebClient.builder().baseUrl("http://localhost:8082").build();
+    }
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import cl.esperanza.incidencia.dto.CreateIncidenciaRequest;
 import cl.esperanza.incidencia.dto.UpdateEstadoRequest;
@@ -42,7 +43,7 @@ public class IncidenciaController {
     // EndPoint 2 guardarIncidencia
     @PostMapping
     public ResponseEntity<Incidencia> saveIncidencia(@Valid @RequestBody CreateIncidenciaRequest request) {
-        Incidencia nuevaIncidencia = incidenciaService.guardarIncidencia(IncidenciaMapper.toModel(request));
+        Incidencia nuevaIncidencia = incidenciaService.registrarIncidenciaValidada(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevaIncidencia);
     }
     
