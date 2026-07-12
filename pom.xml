@@ -10,7 +10,7 @@
     </parent>
     
     <groupId>cl.esperanza</groupId>
-    <artifactId>factura</artifactId>
+    <artifactId>incidencia</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>incidencia</name>
     <description>Microservicio de incidencias</description>
@@ -72,6 +72,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>4.2.0</version>
         </dependency>
     </dependencies>
 
